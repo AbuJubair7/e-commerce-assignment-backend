@@ -4,6 +4,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CategoriesModule } from './module/categories/categories.module';
+import { ProductsModule } from './module/products/products.module';
+import { UsersModule } from './module/users/users.module';
+import { CartModule } from './module/cart/cart.module';
+import { AuthModule } from './module/auth/auth.module';
 
 @Module({
   imports: [
@@ -18,6 +22,10 @@ import { CategoriesModule } from './module/categories/categories.module';
       synchronize: true, // Warning: Don't use true in production, use migrations instead
     }),
     CategoriesModule,
+    ProductsModule,
+    UsersModule,
+    CartModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
