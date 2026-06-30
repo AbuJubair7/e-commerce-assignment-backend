@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CategoriesModule } from './module/categories/categories.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { AppService } from './app.service';
       autoLoadEntities: true, // Automatically loads entities registered in features
       synchronize: true, // Warning: Don't use true in production, use migrations instead
     }),
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
