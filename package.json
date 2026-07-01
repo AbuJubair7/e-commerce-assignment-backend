@@ -22,7 +22,7 @@
     "migration:create": "npm run typeorm migration:create",
     "migration:run": "npm run typeorm migration:run -- -d ./src/data-source.ts",
     "seed": "npm run migration:run",
-    "seed:prod": "typeorm migration:run -d dist/data-source.js"
+    "seed:prod": "node dist/run-migrations.js"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
